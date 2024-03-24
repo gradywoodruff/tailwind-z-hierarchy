@@ -1,0 +1,26 @@
+{
+  "name": "z-hierarchy",
+  "version": "1.0.0",
+  "description": "Keep z-index organized with an array of z-index levels",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gradywoodruff/tailwind-z-hierarchy.git"
+  },
+  "keywords": [
+    "tailwind",
+    "z-index"
+  ],
+  "peerDependencies": {
+    "tailwindcss": "^3.0.0"
+  },
+  "author": "Grady Woodruff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gradywoodruff/tailwind-z-hierarchy/issues"
+  },
+  "homepage": "https://github.com/gradywoodruff/tailwind-z-hierarchy#readme"
+}
