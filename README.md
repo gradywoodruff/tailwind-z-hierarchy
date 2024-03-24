@@ -29,3 +29,5 @@ module.exports = {
   ],
 }
 ```
+
+The array you pass to `zHierarchy()` will be used to generate the z-index values for your project. The values will be generated in the order you pass them in. To use them in tailwind, you just add the class `z-<name>`, like `z-header` or `z-sidebar-bg`.
