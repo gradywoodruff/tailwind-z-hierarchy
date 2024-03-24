@@ -3,11 +3,11 @@
 Install with npm or yarn
 
 ```bash
-npm install --save-dev tailwind-z-hierarchy-plugin
+npm install --save-dev tailwind-z-hierarchy
 ```
 
 ```bash
-yarn add --dev tailwind-z-hierarchy-plugin
+yarn add --dev tailwind-z-hierarchy
 ```
 
 Then add the plugin to your `tailwind.config.js` file.
