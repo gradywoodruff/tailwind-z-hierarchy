@@ -10,7 +10,11 @@ npm install --save-dev tailwind-z-hierarchy-plugin
 yarn add --dev tailwind-z-hierarchy-plugin
 ```
 
+Then add the plugin to your `tailwind.config.js` file.
+
 ```js
+const zHierarchy = require("tailwind-z-hierarchy");
+
 module.exports = {
   theme: {
     // your theme configurations
@@ -23,5 +27,5 @@ module.exports = {
     ]),
     // other plugins
   ],
-};
+}
 ```

@@ -1,5 +1,5 @@
 {
-  "name": "z-hierarchy",
+  "name": "tailwind-z-hierarchy",
   "version": "1.0.0",
   "description": "Keep z-index organized with an array of z-index levels",
   "main": "src/index.js",
@@ -17,7 +17,7 @@
   "peerDependencies": {
     "tailwindcss": "^3.0.0"
   },
-  "author": "Grady Woodruff",
+  "author": "Grady Woodruff <gradywoodruff@mac.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gradywoodruff/tailwind-z-hierarchy/issues"
