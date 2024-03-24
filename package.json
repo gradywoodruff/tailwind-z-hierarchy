@@ -1,8 +1,9 @@
 {
   "name": "tailwind-z-hierarchy",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Keep z-index organized with a z-index hierarchy array",
   "main": "src/index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
