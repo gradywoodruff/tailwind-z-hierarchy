@@ -23,10 +23,10 @@ module.exports = {
   },
   plugins: [
     zHierarchy([
-      "header",       // z-index will be 10
-      "sidebar-blur", // z-index will be 20
-      "sidebar",      // z-index will be 30
-      "modal"         // z-index will be 40
+      "header",       // z-index will be 1
+      "sidebar-blur", // z-index will be 10
+      "sidebar",      // z-index will be 20
+      "modal"         // z-index will be 30
     ]),
     // other plugins
   ],
