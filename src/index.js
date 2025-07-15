@@ -14,4 +14,6 @@ const zHierarchy = function (options = []) {
   })
 }
 
+// Support both CommonJS and ES6 imports
 module.exports = zHierarchy
+module.exports.default = zHierarchy
