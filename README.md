@@ -20,40 +20,26 @@ yarn add --dev tailwind-z-hierarchy
 
 ### Tailwind CSS 4.x (CSS-first configuration)
 
-For Tailwind 4, you can use the plugin in two ways:
-
-#### Option 1: Using @config directive (Recommended)
-
 Create a `tailwind.config.js` file:
 ```js
 import zHierarchy from "tailwind-z-hierarchy";
 
 export default {
   plugins: [
-    zHierarchy(["header", "sidebar-blur", "sidebar", "modal"])
+    zHierarchy(["main", "calendar", "calendar-active", "chat"])
   ]
 }
 ```
 
-Then load it in your CSS file:
+Then in your CSS file:
 ```css
 @import "tailwindcss";
 @config "./tailwind.config.js";
 ```
 
-#### Option 2: Using @plugin directive (Simple)
+### Tailwind CSS 3.x (Traditional configuration)
 
-For basic plugin loading without configuration:
-```css
-@import "tailwindcss";
-@plugin "tailwind-z-hierarchy";
-```
-
-**Note:** The `@plugin` directive doesn't support passing configuration options, so you would need to modify the plugin's source code to change the default hierarchy.
-
-### Tailwind CSS 3.x (JavaScript configuration)
-
-For Tailwind 3, add the plugin to your `tailwind.config.js` file:
+Add the plugin to your `tailwind.config.js` file:
 
 ```js
 const zHierarchy = require("tailwind-z-hierarchy");
@@ -65,88 +51,48 @@ module.exports = {
   plugins: [
     zHierarchy([
       "header",       // z-index will be 1
-      "sidebar-blur", // z-index will be 10
-      "sidebar",      // z-index will be 20
-      "modal"         // z-index will be 30
-    ]),
-    // other plugins
-  ],
+      "modal",        // z-index will be 10
+      "overlay",      // z-index will be 20
+      "tooltip"       // z-index will be 30
+    ])
+  ]
 }
 ```
 
-### ES6 Import (Tailwind 3.x)
+## Generated Classes
 
-If you're using ES6 modules in your Tailwind 3 config:
+Based on the example configuration above, the plugin will generate these utility classes:
 
-```js
-import zHierarchy from "tailwind-z-hierarchy";
-
-export default {
-  plugins: [
-    zHierarchy([
-      "header",       // z-index will be 1
-      "sidebar-blur", // z-index will be 10
-      "sidebar",      // z-index will be 20
-      "modal"         // z-index will be 30
-    ]),
-    // other plugins
-  ],
-}
+```css
+.z-main { z-index: 1; }
+.z-calendar { z-index: 10; }
+.z-calendar-active { z-index: 20; }
+.z-chat { z-index: 30; }
 ```
 
-## How it works
+## Features
 
-The array you pass to `zHierarchy()` will be used to generate the z-index values for your project. The values will be generated in the order you pass them in. To use them in your HTML, you just add the class `z-<name>`, like `z-header` or `z-sidebar-blur`.
+- **Consistent z-index values** across your project
+- **Automatic spacing** (groups of 10) allows easy insertion of new values
+- **Kebab-case conversion** (e.g., `calendarActive` becomes `z-calendar-active`)
+- **Compatible with both Tailwind 3.x and 4.x**
 
 ## Migration from Tailwind 3 to 4
 
-When migrating from Tailwind 3 to 4, you have two options:
+If you're upgrading from Tailwind 3 to 4, simply:
 
-### Option A: Keep using JavaScript config (Recommended)
-
-1. **Update your config file** to use ES6 exports:
-   ```js
-   // Before (Tailwind 3)
-   module.exports = {
-     plugins: [zHierarchy(["header", "sidebar", "modal"])]
-   }
-   
-   // After (Tailwind 4)
-   export default {
-     plugins: [zHierarchy(["header", "sidebar", "modal"])]
-   }
-   ```
-
-2. **Add @config directive** to your CSS:
+1. Keep your existing `tailwind.config.js` file
+2. Update your CSS to use the `@config` directive:
    ```css
    @import "tailwindcss";
    @config "./tailwind.config.js";
    ```
 
-### Option B: Switch to CSS-only
-
-Remove the JavaScript config and use the `@plugin` directive, but note that you'll lose the ability to customize the hierarchy without modifying the plugin source.
-
-## Generated Classes
-
-The plugin generates utility classes with the following pattern:
-
-- First item: `z-<name>` with `z-index: 1`
-- Subsequent items: `z-<name>` with `z-index: <index> * 10`
-
-This spacing allows you to easily insert new z-index values between existing ones if needed.
-
-## Example
+## Example Usage in HTML
 
 ```html
-<header class="z-header">Header content</header>
-<aside class="z-sidebar">Sidebar content</aside>
-<div class="z-modal">Modal content</div>
-```
-
-The generated CSS will be:
-```css
-.z-header { z-index: 1; }
-.z-sidebar { z-index: 10; }
-.z-modal { z-index: 20; }
+<div class="z-main">Main content</div>
+<div class="z-calendar">Calendar widget</div>
+<div class="z-calendar-active">Active calendar overlay</div>
+<div class="z-chat">Chat window</div>
 ```
