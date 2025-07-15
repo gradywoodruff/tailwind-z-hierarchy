@@ -1,6 +1,6 @@
-import { PluginCreator } from 'tailwindcss';
+import { PluginCreator } from 'tailwindcss/types/config';
 
 declare module 'tailwind-z-hierarchy' {
-  const zHierarchy: (options: string[]) => PluginCreator;
+  const zHierarchy: (options?: string[]) => PluginCreator;
   export = zHierarchy;
 }
