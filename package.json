@@ -1,6 +1,6 @@
 {
   "name": "tailwind-z-hierarchy",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Keep z-index organized with a z-index hierarchy array",
   "main": "src/index.js",
   "module": "src/index.js",
@@ -8,7 +8,8 @@
   "exports": {
     ".": {
       "import": "./src/index.js",
-      "require": "./src/index.js"
+      "require": "./src/index.js",
+      "types": "./index.d.ts"
     }
   },
   "scripts": {
