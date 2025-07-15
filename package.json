@@ -1,6 +1,6 @@
 {
   "name": "tailwind-z-hierarchy",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Keep z-index organized with a z-index hierarchy array",
   "main": "src/index.js",
   "module": "src/index.js",
